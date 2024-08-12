@@ -1,0 +1,51 @@
+### Cria um cliente
+POST http://localhost:3000/client
+Content-Type: application/json
+
+{
+    "name": "Jessé R das Neves",
+    "email": "jesse@gmail.com",
+    "outro": "vdfvd dfv df",
+    "address": {
+        "cep": "89160-278",
+        "road": "Rua Felício Ledra",
+        "number": "230",
+        "complement": "",
+        "neighborhood": "Santana",
+        "city": "Rio do Sul",
+        "state": "SC",
+        "testezera": "bla bla bla"
+    }
+}
+
+
+### Busca todos os clientes
+GET http://localhost:3000/client
+
+
+### Busca por um cliente específico
+GET http://localhost:3000/client/edfe107f-dcde-42e5-b38d-6d91303ae00e
+
+
+### Atualiza um cliente específico
+PATCH http://localhost:3000/client/37727189-9a6a-4b9c-97cb-e65307cd9350
+Content-Type: application/json
+
+{
+    "name": "Juca da Silva",
+    "email": "juca@gmail.com",
+    "outro": "vdfvd dfv df",
+    "address": {
+        "cep": "89160-278",
+        "road": "Rua Felício Ledra",
+        "number": "21",
+        "complement": "",
+        "neighborhood": "Santana",
+        "city": "Rio do Sul",
+        "state": "SC",
+        "testezera": "bla bla bla"
+    }
+}
+
+### Exclui um cliente específico
+DELETE http://localhost:3000/client/d42e5225-bda2-4aca-8042-5dd4312594d0

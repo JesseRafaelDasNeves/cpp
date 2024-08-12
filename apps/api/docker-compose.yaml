@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  mongo:
+    image: mongo
+    container_name: service_mongo
+    restart: always
+    networks:
+      - cpp_bridge
+    volumes:
+      - ./data/service_mongo:/data/db
+    ports:
+      - "27020:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: app_cpp
+      MONGO_INITDB_ROOT_PASSWORD: 87!Jws
+
+networks:
+  cpp_bridge:
+    driver: bridge
