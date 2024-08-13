@@ -1,0 +1,28 @@
+### create new product
+POST http://localhost:3000/product
+Content-Type: application/json
+
+{
+    "name": "Teste 10",
+    "description": "testezera",
+    "salePrice": 10.26,
+    "coluna_inexisteste": "fnbld"
+}
+
+### search all products
+GET http://localhost:3000/product
+
+### search one product by id
+GET http://localhost:3000/product/66bb95068b5b902e6bd37c76
+
+### update product
+PATCH http://localhost:3000/product/66bba023618fef1bcc285cde
+Content-Type: application/json
+
+{
+    "name": "Teste 1 - (teste alteração 2)",
+    "coluna_inexisteste": "fnbld"
+}
+
+### remove product
+DELETE http://localhost:3000/product/66bb95398b5b902e6bd37c78

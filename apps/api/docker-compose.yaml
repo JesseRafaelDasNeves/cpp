@@ -4,6 +4,8 @@ services:
     image: mongo
     container_name: service_mongo
     restart: always
+    env_file:
+      - .env
     networks:
       - cpp_bridge
     volumes:
@@ -11,8 +13,8 @@ services:
     ports:
       - "27020:27017"
     environment:
-      MONGO_INITDB_ROOT_USERNAME: app_cpp
-      MONGO_INITDB_ROOT_PASSWORD: 87!Jws
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASS}
 
 networks:
   cpp_bridge:
