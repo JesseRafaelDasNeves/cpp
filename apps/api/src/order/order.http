@@ -1,0 +1,51 @@
+### create orders
+post http://localhost:3000/order
+Content-Type: application/json
+
+{
+    "client": {
+        "id": "56165165bng561",
+        "name": "Juca da Silva",
+        "email": "juca@gmail.com",
+        "phone": "(66)6444-4444",
+        "coluna_teste": "vndvndkl"
+    },
+    "product": {
+        "id": "15166516516551655f",
+        "name": "Camiseta Personalizada com Estampa Homem de Ferro",
+        "salePrice": 10.975,
+        "amount": 2,
+        "coluna_teste": "vndvndkl"
+    },
+    "address": {
+        "cep": "89160-278",
+        "road": "Rua Felício Ledra",
+        "number": "230",
+        "complement": "",
+        "neighborhood": "Santana",
+        "city": "Rio do Sul",
+        "state": "SC",
+        "testezera": "bla bla bla"
+    },
+    "observation": "teste",
+    "shippingDays": 5,
+    "term": "2024-10-06",
+    "coluna_teste": "vndvndkl"
+}
+
+### search all orders
+GET http://localhost:3000/order
+
+### search order by id
+GET http://localhost:3000/order/66bd23b3165e78fdfc950a1d
+
+### update order
+PATCH http://localhost:3000/order/66bd23b3165e78fdfc950a1d
+Content-Type: application/json
+
+{
+    "term": "2024-10-16"
+}
+
+### remove order
+DELETE http://localhost:3000/order/66bd23b3165e78fdfc950a1d
