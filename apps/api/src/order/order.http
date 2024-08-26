@@ -5,8 +5,8 @@ Content-Type: application/json
 {
     "client": {
         "id": "56165165bng561",
-        "name": "Juca da Silva",
-        "email": "juca@gmail.com",
+        "name": "Pedrinho da Silva",
+        "email": "pedrinho@gmail.com",
         "phone": "(66)6444-4444",
         "coluna_teste": "vndvndkl"
     },

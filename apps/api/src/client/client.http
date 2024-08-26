@@ -3,8 +3,8 @@ POST http://localhost:3000/client
 Content-Type: application/json
 
 {
-    "name": "Jessé R das Neves",
-    "email": "jesse@gmail.com",
+    "name": "Pedrinho Silva",
+    "email": "pedrinho@gmail.com",
     "outro": "vdfvd dfv df",
     "address": {
         "cep": "89160-278",
@@ -24,7 +24,7 @@ GET http://localhost:3000/client
 
 
 ### Busca por um cliente específico
-GET http://localhost:3000/client/edfe107f-dcde-42e5-b38d-6d91303ae00e
+GET http://localhost:3000/client/37727189-9a6a-4b9c-97cb-e65307cd9350
 
 
 ### Atualiza um cliente específico
@@ -34,6 +34,7 @@ Content-Type: application/json
 {
     "name": "Juca da Silva",
     "email": "juca@gmail.com",
+    "phone": "(47) 95463-4444",
     "outro": "vdfvd dfv df",
     "address": {
         "cep": "89160-278",

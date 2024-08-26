@@ -1,0 +1,78 @@
+<section class="container_app bg-white rounded-lg">
+  <div class="px-4 sm:px-0 mb-3 border-b border-gray-100">
+    <h3 class="text-2xl font-semibold leading-7 text-gray-900">Pedidos</h3>
+  </div>
+
+  <div>
+    <button
+      type="button"
+      routerLink="/order/create"
+      class="inline-flex items-center rounded-xl bg-white hover:bg-gray-100 border-gray-100 border-2 px-3 py-1 text-sm font-semibold text-gray-700 shadow-sm ring-1 ring-inset ring-gray-300"
+    >
+      <mat-icon class="mr-2 text-green-600" fontIcon="add"></mat-icon>
+      Novo Pedido
+    </button>
+  </div>
+
+  <div class="">
+    <ul role="list">
+      <li
+        class="flex justify-between gap-x-6 p-5 rounded-lg bg-white m-2 border-2"
+        *ngFor="let order of orders"
+      >
+        <div class="flex min-w-0 gap-x-4">
+          <div class="min-w-0 flex-auto">
+            <p class="text-sm font-semibold leading-6 text-gray-900">
+              PEDIDO REALIZADO EM {{ dateOrderInFull(order.createdAt) }}
+            </p>
+            <p class="mt-1 truncate text-xs leading-5 text-gray-500">
+              {{ order.product.name }}
+            </p>
+            <img
+              class="h-10 w-10 flex-none rounded-sm bg-gray-50"
+              src="/assets/images/produto-camiseta.png"
+              alt=""
+            />
+          </div>
+        </div>
+        <div>
+          <p>TOTAL</p>
+          <p class="text-sm">R$ {{ order.totalValue }}</p>
+        </div>
+        <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+          <p class="text-sm leading-6 text-gray-900">
+            PEDIDO Nº {{ order._id }}
+          </p>
+          <p class="text-sm leading-6 text-gray-900 font-semibold">
+            Cliente: {{ order.client.name }}
+          </p>
+          <div>
+            <span class="hidden sm:block">
+              <button
+                type="button"
+                routerLink=""
+                class="inline-flex items-center rounded-xl bg-white hover:bg-gray-100 border-gray-100 border-2 px-3 py-1 text-sm font-semibold text-gray-700 shadow-sm ring-1 ring-inset ring-gray-300"
+              >
+                <mat-icon
+                  class="mr-2 text-indigo-600"
+                  fontIcon="edit"
+                ></mat-icon>
+                Alterar
+              </button>
+              <button
+                type="button"
+                class="inline-flex items-center rounded-xl bg-white hover:bg-gray-100 border-gray-100 border-2 px-3 py-1 text-sm font-semibold text-gray-700 shadow-sm ring-1 ring-inset ring-gray-300"
+              >
+                <mat-icon
+                  class="mr-2 text-red-600"
+                  fontIcon="delete"
+                ></mat-icon>
+                Excluir
+              </button>
+            </span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>

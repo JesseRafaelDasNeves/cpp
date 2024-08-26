@@ -3,7 +3,7 @@ POST http://localhost:3000/product
 Content-Type: application/json
 
 {
-    "name": "Teste 10",
+    "name": "Teste 12",
     "description": "testezera",
     "salePrice": 10.26,
     "coluna_inexisteste": "fnbld"
@@ -20,7 +20,8 @@ PATCH http://localhost:3000/product/66bba023618fef1bcc285cde
 Content-Type: application/json
 
 {
-    "name": "Teste 1 - (teste alteração 2)",
+    "name": "Camiseta Capitão América",
+    "description": "Camiseta com Estampa do Capitão América 100% algodão",
     "coluna_inexisteste": "fnbld"
 }
 

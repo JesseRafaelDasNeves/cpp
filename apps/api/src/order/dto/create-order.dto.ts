@@ -1,8 +1,8 @@
 import {
   IsDateString,
   IsInt,
+  IsOptional,
   IsString,
-  Length,
   ValidateNested,
 } from 'class-validator';
 import { OrderClientDto } from './order-client.dto';
@@ -24,7 +24,7 @@ export class CreateOrderDto {
   address: OrderAddreesDto;
 
   @IsString()
-  @Length(5)
+  @IsOptional()
   observation: string;
 
   @IsInt()

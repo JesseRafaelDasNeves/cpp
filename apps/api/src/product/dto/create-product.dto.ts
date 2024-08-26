@@ -1,6 +1,7 @@
 import {
   IsNotEmpty,
   IsNumber,
+  IsOptional,
   IsPositive,
   IsString,
   Length,
@@ -13,6 +14,7 @@ export class CreateProductDto {
   name: string;
 
   @IsString()
+  @IsOptional()
   description: string;
 
   @IsNumber({ maxDecimalPlaces: 3 })
