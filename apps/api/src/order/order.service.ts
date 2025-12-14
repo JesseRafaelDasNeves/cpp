@@ -4,18 +4,22 @@ import { UpdateOrderDto } from './dto/update-order.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Order } from './entities/order.entity';
 import { Model } from 'mongoose';
+import { SqsService } from '@ssut/nestjs-sqs';
+import { v4 as uuidv4 } from 'uuid';
 
 @Injectable()
 export class OrderService {
   constructor(
     @InjectModel(Order.name)
     private readonly orderModel: Model<Order>,
+    private readonly sqsService: SqsService,
   ) {}
 
   async create(dto: CreateOrderDto): Promise<Order> {
     const order = new this.orderModel(dto);
     order.totalValue = order.product.amount * order.product.salePrice;
-    await order.save();
+    //await order.save();
+    this.dispatchSomething();
     return order;
   }
 
@@ -34,5 +38,13 @@ export class OrderService {
 
   async remove(id: string) {
     return await this.orderModel.findByIdAndDelete(id);
+  }
+
+  private async dispatchSomething() {
+    await this.sqsService.send('primeira-fila', {
+      id: uuidv4(),
+      body: { message: 'Minha Primeira Fila com SQS' },
+      delaySeconds: 0,
+    });
   }
 }

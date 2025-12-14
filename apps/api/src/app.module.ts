@@ -5,6 +5,8 @@ import { ProductModule } from './product/product.module';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseConfigService } from './config/mongoose-config.service';
 import { OrderModule } from './order/order.module';
+import { SqsModule } from '@ssut/nestjs-sqs';
+import { SqsConfigService } from './config/sqs-config.service';
 
 @Module({
   imports: [
@@ -12,6 +14,9 @@ import { OrderModule } from './order/order.module';
     MongooseModule.forRootAsync({
       useClass: MongooseConfigService,
       inject: [MongooseConfigService],
+    }),
+    SqsModule.registerAsync({
+      useClass: SqsConfigService,
     }),
     ClientModule,
     ProductModule,
